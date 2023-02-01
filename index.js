@@ -14,8 +14,21 @@
         + Bu `isim` ve `yas` i içeren bir string döndürmelidir Örnek: "Mary, 50"
 */
 
-function Kisi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Kisi(isim,yas) {
+ this.isim = isim;
+ this.yas= yas;
+ this.mide=[];
+ this.ye= function(item){
+  if(this.mide.length<10){this.mide.push(item);}
+ }
+ this.bosalt=function(){this.mide=[];}
+ this.toString=function(){return this.isim+", "+this.yas}
+
+
+
+
+
+
 }
 
 
@@ -35,18 +48,28 @@ function Kisi(/* kodlar buraya */) {
         +  "x milde benzinim bitti!" x değişkeni `odometer` daki sayı olmalıdır.
 */
 
-function Araba(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Araba(modl,mil) {
+  this.tank=0;
+  this.odometer=0;
+  this.model=modl;
+  this.milesPerGallon=mil;
+ this.fill=function(gallons){this.tank=this.tank+gallons;};
+ this.drive=function(distance){
+  this.odometer=this.odometer+distance; 
+  this.tank = this.tank-(distance/milesPerGallon)
+if(this.tank<=0){ 
+  console.log( `${this.odometer} milde benzinim bitti!`)}
+}  
 }
 
 
 /* 
   GÖREV 3
   Kendi cümlelerinizle "this" kelimesinin 4 prensibini açıklayın:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window/Global Object Bağlaması(Window/Global Object Binding)
+  2. Örtük Bağlama(Implicit Binding)
+  3. Yeni Bağlama(New Binding)
+  4. Açık Bağlama(Explicit Binding)
 */
 
 
