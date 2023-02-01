@@ -58,7 +58,10 @@ function Araba(modl,mil) {
   this.odometer=this.odometer+distance; 
   this.tank = this.tank-(distance/milesPerGallon)
 if(this.tank<=0){ 
+  const extraMile =this.tank*this.milesPerGallon,
+  this.odometer+=extraMile;
   console.log( `${this.odometer} milde benzinim bitti!`)}
+  i
 }  
 }
 
